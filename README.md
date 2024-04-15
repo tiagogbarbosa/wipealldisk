@@ -7,12 +7,8 @@ Particularly helpful in cases where md RAID or ZFS partition metadata remains on
 
 To install, run:
 
-`git clone https://github.com/84adam/wipealldisks.git ; cd wipealldisks ; chmod +x wipealldisks.sh`
+`git clone https://github.com/tiagogbarbosa/wipealldisk.git ; cd wipealldisks ; chmod +x wipealldisks.sh`
 
 Then run as root (or sudo):
 
 * `# ./wipealldisks.sh`
-* or
-* `$ sudo ./wipealldisks.sh`
-
-Type `'Y/y/YES/yes'` only if you are *absolutely* sure you want to delete everything on all disks.
