@@ -11,4 +11,4 @@ To install, run:
 
 Then run as root (or sudo):
 
-* `# ./wipealldisks.sh`
+* `./wipealldisks.sh </dev/DISK>`
