@@ -7,7 +7,7 @@ Particularly helpful in cases where md RAID or ZFS partition metadata remains on
 
 To install, run:
 
-`git clone https://github.com/tiagogbarbosa/wipealldisk.git ; cd wipealldisks ; chmod +x wipealldisks.sh`
+`git clone https://github.com/tiagogbarbosa/wipealldisk.git ; cd wipealldisk ; chmod +x wipealldisks.sh`
 
 Then run as root (or sudo):
 
