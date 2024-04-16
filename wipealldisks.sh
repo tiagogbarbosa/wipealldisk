@@ -20,7 +20,7 @@ if ! [[ `echo $input |egrep -i '^y$|^yes$'` ]]; then
     exit
 fi
 
-map_entries=$(dmsetup ls --simple | cut -f1)
+map_entries=$(dmsetup ls | cut -f1)
 for entry in $map_entries; do
     echo "Removing $entry..."
     dmsetup remove "$entry"
