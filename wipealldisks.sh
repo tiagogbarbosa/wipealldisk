@@ -11,7 +11,7 @@ fi
 
 DISK="$1"
 
-echo "WARNING: This will permanently erase or render inaccessible all data on all disks! This includes: `for i in DISK ; do echo "/dev/$DISK" ; done`."
+echo "WARNING: This will permanently erase or render inaccessible all data on disk! $DISK ."
 echo "Are you sure you wish to continue? Yes/No "
 
 read input
@@ -20,6 +20,18 @@ if ! [[ `echo $input |egrep -i '^y$|^yes$'` ]]; then
     exit
 fi
 
+map_entries=$(dmsetup ls --simple | cut -f1)
+for entry in $map_entries; do
+    echo "Removing $entry..."
+    dmsetup remove "$entry"
+    if [ $? -eq 0 ]; then
+        echo "$entry removed successfully."
+    else
+        echo "Failed to remove $entry."
+    fi
+done
+
+echo "All possible device mappings have been processed."
     echo "Wiping: $DISK..."
     wipefs -a $DISK
     parted -s $DISK mklabel gpt
